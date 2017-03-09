@@ -2,14 +2,14 @@
 
 During Connect(); //2015 we showcased many technologies available to you as a developer across Azure, Office, Windows, Visual Studio and Visual Studio Team Services. We’ve also heard from you that you love to have real-world applications through which you can directly experience what’s possible using those technologies. This year, then, we built out a full health and technology scenario for our Connect(); //2015 demos and are delighted to share all the source code with you.
 
-![](https://srivatsa91.visualstudio.com/c3372227-a487-4b2d-8e25-5f5691c30127/_api/_versioncontrol/itemContent?repositoryId=19ef6faa-f7a9-44f7-8f50-40a42d19fbf0&path=%2FHealthlogo.jpg&version=GBmaster&contentOnly=true&__v=5)
+![](Healthlogo.jpg)
 
 HealthClinic.biz is a fictitious regular doctor practice specialized in offering healthcare preventive care. This clinic is using different Microsoft and multi-channel apps built with Visual Studio 2015 to grow their business and modernize their customer experience. They also innovate and offer multiple apps and services—including websites, mobile apps, and wearable apps—to empower their patient’s well-being with easy access to manage their healthcare data and stay healthy.
 
 This demo contains complete source code for mobile applications (Xamarin and Cordova), Build definitions to build the code across iOS, Android and Windows Platforms, Test using XTC, Publish to Hockey App Code Push Azure. 
 This project will help you demonstrate the DevOps story for mobile
 
-![](https://srivatsa91.visualstudio.com/c3372227-a487-4b2d-8e25-5f5691c30127/_api/_versioncontrol/itemContent?repositoryId=19ef6faa-f7a9-44f7-8f50-40a42d19fbf0&path=%2Ftest.jpg&version=GBmaster&contentOnly=true&__v=5)
+![](test.jpg)
 
 # Demo Script #
 Latest information and updated Demo Scripts are available at [http://mhcdemos.azurewebsites.net/docs/](http://mhcdemos.azurewebsites.net/docs/)
