@@ -1,26 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyHealth.Model", "src\MyHealth.Model\MyHealth.Model.xproj", "{74909452-94ED-4B8B-B452-6A40F5A8F58C}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyHealth.Data", "src\MyHealth.Data\MyHealth.Data.xproj", "{E4A09728-2A40-459F-983B-7DDBB8007AAB}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyHealth.API", "src\MyHealth.API\MyHealth.API.xproj", "{42137795-6EFB-41C8-9CDD-96E5FF3C5B6E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{57584487-3A55-47C2-9FA5-5C62BF8D87ED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0C9AB56B-4835-4539-8439-799F459911A7}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyHealth.Web", "src\MyHealth.Web\MyHealth.Web.xproj", "{11E2D7CC-1221-4E5C-9A4E-2653AE455ED4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F1E42E5B-586D-453B-A7D8-05D6E647C3D9}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyHealth.API.IntegrationTests", "test\MyHealth.API.IntegrationTests\MyHealth.API.IntegrationTests.xproj", "{E150AB03-F223-4880-B248-90917C387899}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHealth.Model", "src\MyHealth.Model\MyHealth.Model.csproj", "{74909452-94ED-4B8B-B452-6A40F5A8F58C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHealth.Data", "src\MyHealth.Data\MyHealth.Data.csproj", "{E4A09728-2A40-459F-983B-7DDBB8007AAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHealth.API", "src\MyHealth.API\MyHealth.API.csproj", "{42137795-6EFB-41C8-9CDD-96E5FF3C5B6E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHealth.Web", "src\MyHealth.Web\MyHealth.Web.csproj", "{11E2D7CC-1221-4E5C-9A4E-2653AE455ED4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHealth.API.IntegrationTests", "test\MyHealth.API.IntegrationTests\MyHealth.API.IntegrationTests.csproj", "{E150AB03-F223-4880-B248-90917C387899}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
