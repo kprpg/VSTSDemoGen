@@ -52,7 +52,7 @@ $s = Select-AzureRmSubscription -SubscriptionId 49c7ab35-7737-4a04-8ae6-49ec7aa9
 ## For the resource group level application the scope should look as above with subscriptionID 
 ## explicitly retrieved ahead of time. The subscription scope level is the same without the resource 
 ## groups references (or creation of an RG) – it would look like /subscriptions/$subscriptionID. 
-## A document commenter also noticed this as well. 
+## A document commenter also noticed this as well. ( from PM Matthew McGlynn  )
 $subscriptionID = $s.Subscription.SubscriptionId
 
 ## $s = Select-AzureRmSubscription -SubscriptionName "Windows Azure MSDN - Visual Studio Ultimate"
