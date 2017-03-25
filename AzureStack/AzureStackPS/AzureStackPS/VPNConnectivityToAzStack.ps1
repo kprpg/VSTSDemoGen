@@ -23,7 +23,7 @@ $natIP = Get-AzureStackNatServerAddress -HostComputer $hostIP -Password $Passwor
 Add-AzureStackVpnConnection -ServerAddress $natIP -Password $Password
 
 ## Connect to the Azure Stack instance by using either of the following methods: 
-## a. Connect-AzureStackVpn command: 
+## a. Connect-AzureStackVpn command (as below) OR 
 ## b. Go to Rt Lower corner of screen and pop up the nework icon and click connect on the 
 ##    AzureStack VPN icon and connect.
 
