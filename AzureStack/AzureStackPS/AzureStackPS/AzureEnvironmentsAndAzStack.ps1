@@ -63,6 +63,7 @@ Get-AzureRmResourceProvider
 ## 9.2 List all of the Registered & Unregistered  Resource Providers avaialble to you in your ARM environment.
 Get-AzureRmResourceProvider -ListAvailable
 ## 9.3 List all of the Registered Resource Providers avaialble to you in your ARM environment, in a more readable format.
+## REPEAT This command in two different Cloud Environments - Public Azure and then in Azure Stack
 Get-AzureRmResourceProvider | Select ProviderNameSpace -Expand ResourceTypes | FT ProviderNameSpace, ResourceTypeName, ApiVersions
 
 ##10. 
