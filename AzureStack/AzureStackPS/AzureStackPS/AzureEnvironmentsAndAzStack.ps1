@@ -57,9 +57,8 @@ Remove-AzureRmEnvironment -Name MyContosoCloud
 ## 8. Now list again all the AzureEnvironments
 Get-AzureRmEnvironment | ft name
 
+## 9. List all of the Registered Resource Providers avaialble to you in your ARM environment.
+Get-AzureRmResourceProvider
 
-
-
-
-## "Creating new resource group for the demo lab..."
-## New-AzureRmResourceGroup -Name $ResourceGroupName -Location $ResourceGroupLocation
+"Creating new resource group for the demo lab..."
+New-AzureRmResourceGroup -Name $ResourceGroupName -Location $ResourceGroupLocation
