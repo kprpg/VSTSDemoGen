@@ -27,6 +27,7 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="AzureEnvironmentsAndAzStack.ps1" />
     <Compile Include="AzureStackPolicyImplement.ps1" />
     <Compile Include="VPNConnectivityToAzStack.ps1" />
   </ItemGroup>
