@@ -30,6 +30,8 @@
     <Compile Include="ASStackMulti-tenant-Registration.ps1" />
     <Compile Include="AzureEnvironmentsAndAzStack.ps1" />
     <Compile Include="AzureStackPolicyImplement.ps1" />
+    <Compile Include="ConfigPS4UseWithMAS.ps1" />
+    <Compile Include="InstallPS4MAS.ps1" />
     <Compile Include="VPNConnectivityToAzStack.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

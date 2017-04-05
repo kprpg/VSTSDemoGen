@@ -21,3 +21,19 @@ $myDirectoryTenantName = "redmarker.onmicrosoft.com"
 
 Register-AzureStackWithMyDirectoryTenant -TenantResourceManagerEndpoint $tenantARMEndpoint `
 	-DirectoryTenantName $myDirectoryTenaneName
+
+
+## Switch Profiles and show usage
+## 1. List All environments
+Get-AzureRmEnvironment | ft Name
+## 2. Set Admin and Tenant Profile for stack
+$adminProfile Add-AzureRmEnvironment -EnvironmentName AzureStack-Admin
+$tenantProfile Add-AzureRmEnvironment -EnvironmentName AzureStack-Tenant
+
+## 3.Select the desired profile
+Select-AzureRmProfile -Profile $adminProfile
+Select-AzureRmProfile -Profile $tenantProfile
+
+## 4.Now do an access operation to an RP
+Get-AzureRmStorageAccount
+
