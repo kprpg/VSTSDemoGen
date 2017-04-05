@@ -1,4 +1,6 @@
-﻿# Note: Because the $ErrorActionPreference is "Stop", this script will stop on first failure.
+﻿### Azure Fundamentals Demo - show different Azure Environments and Azure Stack is just ####
+### one another Azure environment ####
+# Note: Because the $ErrorActionPreference is "Stop", this script will stop on first failure.
 $ErrorActionPreference = "stop"
 
 ## TenantId              : 72f988bf-86f1-41af-91ab-2d7cd011db47
