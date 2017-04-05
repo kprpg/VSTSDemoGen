@@ -69,5 +69,5 @@ Get-AzureRmResourceProvider | Select ProviderNameSpace -Expand ResourceTypes | F
 ##10. 
 Get-AzureRmLocation 
 
-"Creating new resource group for the demo lab..."
-New-AzureRmResourceGroup -Name $ResourceGroupName -Location $ResourceGroupLocation
+"Creating new resource group for the demo lab..."  ## Provide a sample JSON template and parameter file - eg use the Single VM Deploy
+New-AzureRmResourceGroupDeployment -Name deployDemoLab -ResourceGroupName $ResourceGroupName -TemplateFile .\azuredeploy.json -TemplateParameterFile .\azuredeploy.parameters.json -Verbose -timeZoneId ([TimeZoneInfo]::Local.Id)
