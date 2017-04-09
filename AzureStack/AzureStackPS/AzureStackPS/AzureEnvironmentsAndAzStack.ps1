@@ -30,7 +30,7 @@ cd C:\Users\gpillai\AzureStack-Tools-master\
 Import-Module .\Connect\AzureStack.Connect.psm1
 
 ## 2. Adding the AzureStack Env
-Add-AzureStackAzureRmEnvironment -Name MyContosoCloud -ArmEndoint https://management.local.azurestack,externak -AadTenant gpmess.onmicrosoft.com 
+Add-AzureStackAzureRmEnvironment -Name MyContosoCloud -ArmEndoint https://management.local.azurestack.external -AadTenant gpmess.onmicrosoft.com 
 $contosoEnv = Get-AzureRmEnvironment MyContosoCloud
 $contosoAzure = Add-AzureRmAccount -Environment $contosoEnv -Verbose
 

@@ -28,7 +28,7 @@ $AadTenant = Get-AADTenantGUID -AADTenantName "gpmess.onmicrosoft.com"
  $Password = ConvertTo-SecureString "<Administrator password provided when deploying Azure Stack>" -AsPlainText -Force  
 
  #Get the Active Directory Tenant GUID
- $AadTenant = Get-AzureStackAadTenant -HostComputer <Host IP Address> -Password $Password
+ $AadTenant = Get-AzureStackAadTenant -HostComputer "<Host IP Address>" -Password $Password
 ## 2. Register an AzureRM environment that targets your Azure Stack instance
 # Use this command to access the administrative portal
  Add-AzureStackAzureRmEnvironment -Name "AzureStackAdmin" -ArmEndpoint "https://adminmanagement.local.azurestack.external" 

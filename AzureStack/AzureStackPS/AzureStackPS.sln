@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "AzureStackPS", "AzureStackPS\AzureStackPS.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHubArmStackTemplates", "GitHubArmStackTemplates", "{BFF075B0-998D-48C6-AD3C-3F13D52261BB}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ArmTempateForSimpleVM", "ArmTempateForSimpleVM\ArmTempateForSimpleVM.deployproj", "{31DFE2FB-C6BA-4D8A-B37C-F7F5BA500C83}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ArmTemplate4StorageAcct", "AzureResourceGroup1\ArmTemplate4StorageAcct.deployproj", "{82775D6A-6620-4494-99BA-6B149AAB73DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +21,20 @@ Global
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31DFE2FB-C6BA-4D8A-B37C-F7F5BA500C83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31DFE2FB-C6BA-4D8A-B37C-F7F5BA500C83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31DFE2FB-C6BA-4D8A-B37C-F7F5BA500C83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31DFE2FB-C6BA-4D8A-B37C-F7F5BA500C83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82775D6A-6620-4494-99BA-6B149AAB73DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82775D6A-6620-4494-99BA-6B149AAB73DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82775D6A-6620-4494-99BA-6B149AAB73DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82775D6A-6620-4494-99BA-6B149AAB73DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{31DFE2FB-C6BA-4D8A-B37C-F7F5BA500C83} = {BFF075B0-998D-48C6-AD3C-3F13D52261BB}
+		{82775D6A-6620-4494-99BA-6B149AAB73DB} = {BFF075B0-998D-48C6-AD3C-3F13D52261BB}
 	EndGlobalSection
 EndGlobal
