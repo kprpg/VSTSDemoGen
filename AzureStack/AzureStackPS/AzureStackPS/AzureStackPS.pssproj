@@ -27,6 +27,8 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="Add-VM-Images.ps1" />
+    <Compile Include="AddVMImagesInLab.ps1" />
     <Compile Include="ASStackMulti-tenant-Registration.ps1" />
     <Compile Include="AzureEnvironmentsAndAzStack.ps1" />
     <Compile Include="AzureStackPolicyImplement.ps1" />
