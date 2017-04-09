@@ -48,5 +48,5 @@ $AadTenant = Get-AADTenantGUID -AADTenantName "clouddemoorg.onmicrosoft.com"
 Add-VMImage -publisher "Canonical" -offer "UbuntuServer" -sku "14.04.3-LTS" -version "1.0.0" -osType Linux -osDiskLocal 'C:\Temp\trusty-server-cloudimg-amd64-disk1.vhd' -tenantID "clouddemoorg.onmicrosoft.com" -AzureStackCredentials $MASCredential -ArmEndpoint "https://adminportal.local.azurestack.external"
 Add-VMImage -publisher "Canonical" -offer "UbuntuServer" -sku "14.04.3-LTS" -version "1.0.0" -osType Linux -osDiskLocal 'C:\Temp\trusty-server-cloudimg-amd64-disk1.vhd' -tenantID "clouddemoorg.onmicrosoft.com" -AzureStackCredentials $MASCredential -EnvironmentName "AzureStackAdmin"
 # Windows 2016
-$ISOPath-"C:\Users\AzureStackAdmin\Downloads\14393.0.161119-1705.RS1_REFRESH_SERVER_EVAL_X64FRE_EN-US.iso"
-New-Server2016VMImage -ISOPath $ISOPath -TenantId $AADTenantDomain -AzureStackCredentials $MASCredential -EnvironmentName 'AzureStackEnv' -IncludeLatestCU -Version Both -Net35
+$ISOPath = 'c:\Users\AzureStackAdmin\Downloads\14393.0.161119-1705.RS1_REFRESH_SERVER_EVAL_X64FRE_EN-US.iso'
+New-Server2016VMImage -ISOPath $ISOPath -TenantId 'clouddemoorg.onmicrosoft.com' -AzureStackCredentials $MASCredential -EnvironmentName 'AzureStackAdmin' -IncludeLatestCU -Version Both -Net35
