@@ -40,92 +40,92 @@ Get-AzSUpdate -AzureStackCredential $credential -TenantID $TenantID -Environment
 $credential = Get-Credential
 Apply-AzSUpdate -AzureStackCredential $credential -TenantID $TenantID -vupdate "Update Version" -EnvironmentName "AzureStackAdmin"
 
-Get Azure Stack Update Run
-Should be used to validate a specific Update Run or look at previous update runs
+### 6.Get Azure Stack Update Run
+## Should be used to validate a specific Update Run or look at previous update runs
 $credential = Get-Credential
 Get-AzSUpdateRun -AzureStackCredential $credential -TenantID $TenantID -vupdate "Update Version" -EnvironmentName "AzureStackAdmin"
 
-List Infrastructure Roles
-Does list all Infrastructure Roles
+### 7. List Infrastructure Roles
+## Does list all Infrastructure Roles
 $credential = Get-Credential
 Get-AzSInfraRole -AzureStackCredential $credential -TenantID $TenantID -EnvironmentName "AzureStackAdmin"
 
-List Infrastructure Role Instance
-Does list all Infrastructure Role Instances (Note: Does not return Directory Management VM in One Node deployment)
+### 8. List Infrastructure Role Instance
+## Does list all Infrastructure Role Instances (Note: Does not return Directory Management VM in One Node deployment)
 $credential = Get-Credential
 Get-AzSInfraRoleInstance -AzureStackCredential $credential -TenantID $TenantID -EnvironmentName "AzureStackAdmin"
 
-List Scale Unit
-Does list all Scale Units in a specified Region
+### 9.List Scale Unit
+## Does list all Scale Units in a specified Region
 $credential = Get-Credential
 Get-AzSScaleUnit -AzureStackCredential $credential -TenantID $TenantID -EnvironmentName "AzureStackAdmin"
 
-List Scale Unit Nodes
-Does list all Scale Units Nodes
+### 10.List Scale Unit Nodes
+## Does list all Scale Units Nodes
 $credential = Get-Credential
 Get-AzSScaleUnitNode -AzureStackCredential $credential -TenantID $TenantID -EnvironmentName "AzureStackAdmin"
 
-List Logical Networks
-Does list all logical Networks by ID
+### 11. List Logical Networks
+## Does list all logical Networks by ID
 $credential = Get-Credential
 Get-AzSLogicalNetwork -AzureStackCredential $credential -TenantID $TenantID -EnvironmentName "AzureStackAdmin"
 
 
-List Storage Capacity
-Does return the total capacity of the storage subsystem
+### 12. List Storage Capacity
+## Does return the total capacity of the storage subsystem
 $credential = Get-Credential
 Get-AzSStorageCapacity -AzureStackCredential $credential -TenantID $TenantID -EnvironmentName "AzureStackAdmin"
 
-List Storage Shares
-Does list all file shares in the storage subsystem
+### 13. List Storage Shares
+## Does list all file shares in the storage subsystem
 $credential = Get-Credential
 Get-AzSStorageShare -AzureStackCredential $credential -TenantID $TenantID -EnvironmentName "AzureStackAdmin"
 
-List IP Pools
-Does list all IP Pools
+### 14. List IP Pools
+## Does list all IP Pools
 $credential = Get-Credential
 Get-AzSIPPool -AzureStackCredential $credential -TenantID $TenantID -EnvironmentName "AzureStackAdmin"
 
-List MAC Address Pools
-Does list all MAC Address Pool
+### 15. List MAC Address Pools
+## Does list all MAC Address Pool
 $credential = Get-Credential
 Get-AzSMacPool -AzureStackCredential $credential -TenantID $TenantID -EnvironmentName "AzureStackAdmin"
 
-List Gateway Pools
-Does list all Gateway Pools
+#### 16. List Gateway Pools
+## Does list all Gateway Pools
 $credential = Get-Credential
 Get-AzSGatewayPool -AzureStackCredential $credential -TenantID $TenantID -EnvironmentName "AzureStackAdmin"
 
-List SLB MUX
-Does list all SLB MUX Instances
+### 17. List SLB MUX
+## Does list all SLB MUX Instances
 $credential = Get-Credential
 Get-AzSSLBMUX -AzureStackCredential $credential -TenantID $TenantID -EnvironmentName "AzureStackAdmin"
 
-List Gateway Instances
-Does list all Gateway Instances
+### 18. List Gateway Instances
+## Does list all Gateway Instances
 $credential = Get-Credential
 Get-AzSGateway -AzureStackCredential $credential -TenantID $TenantID -EnvironmentName "AzureStackAdmin"
 
-Start Infra Role Instance
-Does start an Infra Role Instance
+### 19. Start Infra Role Instance
+## Does start an Infra Role Instance
 $credential = Get-Credential
 Start-AzSInfraRoleInstance -AzureStackCredential $credential -TenantID $TenantID -Name "InfraRoleInstanceName" -EnvironmentName "AzureStackAdmin"
 
 
-Stop Infra Role Instance
-Does stop an Infra Role Instance
+### 20. Stop Infra Role Instance
+## Does stop an Infra Role Instance
 $credential = Get-Credential
 Stop-AzSInfraRoleInstance -AzureStackCredential $credential -TenantID $TenantID -Name "InfraRoleInstanceName" -EnvironmentName  "AzureStackAdmin"
 
-Restart Infra Role Instance
-Does restart an Infra Role Instance
+### 21. Restart Infra Role Instance
+## Does restart an Infra Role Instance
 $credential = Get-Credential
 Restart-AzSInfraRoleInstance -AzureStackCredential $credential -TenantID $TenantID -Name "InfraRoleInstanceName" -EnvironmentName "AzureStackAdmin"
 
 
 
-##enario Command Usage
-##monstrates using multiple commands together for an end to end scenario.
+##Scenario Command Usage
+##Demonstrates using multiple commands together for an end to end scenario.
 ##cover an Infrastructure Role Instance that has an Alert assigned.
 #Declare Credentials
 $credential = Get-Credential
