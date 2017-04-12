@@ -35,6 +35,7 @@
     <Compile Include="ConfigPS4UseWithMAS.ps1" />
     <Compile Include="DSN-Environment-Integration-to-MAS.ps1" />
     <Compile Include="InstallPS4MAS.ps1" />
+    <Compile Include="MAS-Infrastructure-Monitoring.ps1" />
     <Compile Include="MAS-Multi-Tenanting.ps1" />
     <Compile Include="RegisterMASwithAzure4MrktPlcUsage.ps1" />
     <Compile Include="VPNConnectivityToAzStack.ps1" />
