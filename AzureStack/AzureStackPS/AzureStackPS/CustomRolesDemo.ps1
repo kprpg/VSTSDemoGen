@@ -12,5 +12,5 @@ Get-AzureRmProviderOperation -OperationSearchString Microsoft.Compute/VirtualMac
 ## Create the nre tole definition using the modified input file 
 New-AzureRmRoleDefinition -InputFile C:\users\gpillai\Source\Repos\VSTSDemoGen\AzureStack\AzureStackPS\VM-Custom-Role.json
 
-## Now Assign the Role
+## Now Assign the Role (Does not work, do assignment from portal)
 New-AzureRmRoleAssignment -RoleDefinitionName "VM CustomDemo Role" -ResourceGroupName rgRoleDemo -SignInName girishp@messengeruser.com
