@@ -11,6 +11,13 @@ Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ArmTempateForSimpleVM", "Ar
 EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ArmTemplate4StorageAcct", "AzureResourceGroup1\ArmTemplate4StorageAcct.deployproj", "{82775D6A-6620-4494-99BA-6B149AAB73DB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Governance", "Governance", "{A0311512-515D-4AFE-B1F9-E066673A851A}"
+	ProjectSection(SolutionItems) = preProject
+		AzureStackPS\CustomRolesDemo.ps1 = AzureStackPS\CustomRolesDemo.ps1
+		VM-Contributor-Role.json = VM-Contributor-Role.json
+		VM-Custom-Role.json = VM-Custom-Role.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
