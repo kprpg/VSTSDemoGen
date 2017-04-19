@@ -1,4 +1,5 @@
-﻿"Login to the subscription with your Azure account..."
+﻿$PSVersionTable.PSVersion
+"Login to the subscription with your Azure account..."
 
 $SubscriptionId = '49c7ab35-7737-4a04-8ae6-49ec7aa971c7'
 Login-AzureRmAccount -SubscriptionId $SubscriptionId
@@ -105,3 +106,25 @@ $BOPolicy = New-AzureRmPolicyDefinition -Name appendBoNumberTag2PolicyDefinition
 ## scope = /subscriptions/0c378775-d18a-45bb-b426-3627de556dd1/resourcegroups/rgPolicyDemo
 New-AzureRmPolicyAssignment -Name DemoAssignment –Scope  '/subscriptions/49c7ab35-7737-4a04-8ae6-49ec7aa971c7/resourcegroups/rgPolicyDemo' -PolicyDefinition $policydefinition  -listOfAllowedSKUs {"Standard_LRS", "Standard_GRS"}
 ## It is this simple now!
+
+
+$policy = New-AzureRmPolicyDefinition -Name regionPolicyDefinition -Description "Policy to allow resource creation only in certain regions" -Policy '{
+   "if": {
+     "not": {
+       "field": "location",
+       "in": "[parameters(''allowedLocations'')]"
+     }
+   },
+   "then": {
+     "effect": "deny"
+   }
+ }' -Parameter '{
+     "allowedLocations": {
+       "type": "array",
+       "metadata": {
+         "description": "An array of permitted locations for resources.",
+         "strongType": "location",
+         "displayName": "List of locations"
+       }
+     }
+ }'

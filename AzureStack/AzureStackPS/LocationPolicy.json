@@ -1,0 +1,14 @@
+{
+  "$schema": "http://aka.ms/policyschema",
+  "if": {
+    "not": {
+      "field": "location",
+      "in": [
+        "South Central US"
+      ]
+
+
+    }
+  },
+  "then": { "effect": "deny"}
+}
