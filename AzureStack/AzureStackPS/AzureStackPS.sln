@@ -14,9 +14,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Governance", "Governance", "{A0311512-515D-4AFE-B1F9-E066673A851A}"
 	ProjectSection(SolutionItems) = preProject
 		AzureStackPS\CustomRolesDemo.ps1 = AzureStackPS\CustomRolesDemo.ps1
-		HP-Custom-Role.json = HP-Custom-Role.json
 		LocationPolicy.json = LocationPolicy.json
 		RestrictTypeofAllowedResourcePolicy.json = RestrictTypeofAllowedResourcePolicy.json
+		SupportOnly-Custom-Role.json = SupportOnly-Custom-Role.json
 		VM-Contributor-Role.json = VM-Contributor-Role.json
 		VM-Custom-Role.json = VM-Custom-Role.json
 	EndProjectSection

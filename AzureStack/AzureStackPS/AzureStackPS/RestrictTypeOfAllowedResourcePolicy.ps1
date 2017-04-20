@@ -35,4 +35,4 @@ Login-AzureRmAccount -SubscriptionId $SubscriptionId
 
 $policy = New-AzureRmPolicyDefinition -Name RestrictTypeOfAllowedResourcePolicy -Policy C:\Users\gpillai\Source\Repos\VSTSDemoGen\AzureStack\AzureStackPS\RestrictTypeOfAllowedResourcePolicy.json
 
-New-AzureRmPolicyAssignment -Name locationPolicy -Scope /subscriptions/49c7ab35-7737-4a04-8ae6-49ec7aa971c7/resourceGroups/rgPolicyDemo -PolicyDefinition $policy
+New-AzureRmPolicyAssignment -Name RestrictTypeOfAllowedResourcePolicy -Scope /subscriptions/49c7ab35-7737-4a04-8ae6-49ec7aa971c7/resourceGroups/rgPolicyDemo -PolicyDefinition $policy

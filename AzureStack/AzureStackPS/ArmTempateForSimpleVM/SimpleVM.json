@@ -94,6 +94,8 @@
     "vmName": "SimpleWinVM",
 
     "virtualNetworkName": "MyVNET",
+    "demoVNetName": "ZVNET",
+    "vNetLocation": "West US",
 
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]"
 
@@ -122,6 +124,12 @@
       "properties": {}
 
     },
+    {
+      "apiVersion": "2016-03-30",
+      "type": "Microsoft.Network/virtualNetworks",
+      "name": "[variables('demoVNetName')]",
+      "location": "[variables('vNetLocation')]"
+    }
 
     {
 

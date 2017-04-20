@@ -10,6 +10,20 @@ Login-AzureRmAccount -SubscriptionId $SubscriptionId
 # Get the resource group
 $rgname = "PolicyRG"
 $rg = Get-AzureRmResourceGroup -Name $rgname
+
+### Disallow Public IP fragment
+
+'{
+    "if":
+        {"anyOf":[
+                    {"source":"action","like":"Microsoft.Network/publicIPAddresses/*"}
+                ]
+        },
+        
+    "then":{
+            "effect":"deny"
+            }
+}'
  
 # Create the policy definition
 $definition = '{"if":{"anyOf":[{"source":"action","like":"Microsoft.Network/publicIPAddresses/*"}]},"then":{"effect":"deny"}}'
