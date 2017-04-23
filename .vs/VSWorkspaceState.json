@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AzureStack",
+    "\\AzureStack\\AzureStackPS",
+    "\\AzureStack\\AzureStackPS\\AzureStackPS"
   ],
-  "SelectedNode": "\\CordovaPlugins",
+  "SelectedNode": "\\AzureStack\\AzureStackPS\\AzureStackPS.sln",
   "PreviewInSolutionExplorer": false
 }

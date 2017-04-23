@@ -1,0 +1,7 @@
+{
+  "itemDisplayName": "Windows VM + data disk in AZ",
+  "description": "This template allows you to deploy a simple Windows VM with a managed disk in an AZ.",
+  "summary": "This template takes a few parameters and deploys a Windows VM, using the latest patched version.",
+  "githubUsername": "aaronlower",
+  "dateUpdated": "2017-01-10"
+}

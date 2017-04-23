@@ -21,6 +21,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Governance", "Governance", 
 		VM-Custom-Role.json = VM-Custom-Role.json
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AvailabilityZones", "AvailabilityZones", "{C46A2B15-90AE-4618-B4A8-1E1FC1AE1688}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "active-directory-new-domain-ha-2-dc", "active-directory-new-domain-ha-2-dc", "{CF4511F8-7A55-40CA-8B21-911BF17D9EA6}"
+	ProjectSection(SolutionItems) = preProject
+		AvailabilityZones\active-directory-new-domain-ha-2-dc\azuredeploy.json = AvailabilityZones\active-directory-new-domain-ha-2-dc\azuredeploy.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AZ-101-vm-az-simple-linux", "AZ-101-vm-az-simple-linux", "{DDDB28D5-1094-410B-BAF9-55B5E88D2D36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AZ-101-vm-az-simple-windows", "AZ-101-vm-az-simple-windows", "{8F9158CB-B03A-483F-A6F9-C6697438E639}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AZ-101-vm-az-simple-linux", "AZ-101-vm-az-simple-linux\AZ-101-vm-az-simple-linux.deployproj", "{24C8B225-BB02-412F-8BDD-B1F9A30DB263}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AZ-101-vm-AZ-Simple-Windows", "AZ-101-vm-AZ-Simple-Windows\AZ-101-vm-AZ-Simple-Windows.deployproj", "{39BBEA78-0B75-489F-B506-6809197B8C18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +54,14 @@ Global
 		{82775D6A-6620-4494-99BA-6B149AAB73DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82775D6A-6620-4494-99BA-6B149AAB73DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82775D6A-6620-4494-99BA-6B149AAB73DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24C8B225-BB02-412F-8BDD-B1F9A30DB263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C8B225-BB02-412F-8BDD-B1F9A30DB263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C8B225-BB02-412F-8BDD-B1F9A30DB263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C8B225-BB02-412F-8BDD-B1F9A30DB263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39BBEA78-0B75-489F-B506-6809197B8C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39BBEA78-0B75-489F-B506-6809197B8C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39BBEA78-0B75-489F-B506-6809197B8C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39BBEA78-0B75-489F-B506-6809197B8C18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +69,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{31DFE2FB-C6BA-4D8A-B37C-F7F5BA500C83} = {BFF075B0-998D-48C6-AD3C-3F13D52261BB}
 		{82775D6A-6620-4494-99BA-6B149AAB73DB} = {BFF075B0-998D-48C6-AD3C-3F13D52261BB}
+		{CF4511F8-7A55-40CA-8B21-911BF17D9EA6} = {C46A2B15-90AE-4618-B4A8-1E1FC1AE1688}
+		{DDDB28D5-1094-410B-BAF9-55B5E88D2D36} = {C46A2B15-90AE-4618-B4A8-1E1FC1AE1688}
+		{8F9158CB-B03A-483F-A6F9-C6697438E639} = {C46A2B15-90AE-4618-B4A8-1E1FC1AE1688}
+		{24C8B225-BB02-412F-8BDD-B1F9A30DB263} = {DDDB28D5-1094-410B-BAF9-55B5E88D2D36}
+		{39BBEA78-0B75-489F-B506-6809197B8C18} = {8F9158CB-B03A-483F-A6F9-C6697438E639}
 	EndGlobalSection
 EndGlobal

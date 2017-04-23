@@ -1,0 +1,499 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "numberOfDisks": {
+            "type": "int",
+            "minValue": 1,
+            "maxValue": 64,
+            "metadata": {
+                "description": "For now we will limit it to x"
+            }
+        },
+        "diskSizeGB": {
+            "type": "int",
+            "minValue": 128,
+            "maxValue": 1024,
+            "defaultValue": 512
+        },
+        "cache": {
+            "type": "string",
+            "allowedValues": [
+                "None",
+                "ReadOnly",
+                "ReadWrite"
+            ],
+            "defaultValue": "None"
+        },
+        "prefix": {
+            "type": "string"
+        },
+        "suffix": {
+            "type": "string",
+            "defaultValue": "DataDisk"
+        }
+    },
+    "variables": {
+        "computeResouresApiVersion": "2016-04-30-preview",
+        "apiVersion": "2015-06-15",
+        "diskArray":
+         [
+            {
+                "lun": 0,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_0')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 1,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_1')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 2,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_2')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 3,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_3')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 4,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_4')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 5,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_5')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 6,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_6')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 7,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_7')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 8,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_8')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 9,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_9')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 10,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_10')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 11,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_11')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 12,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_12')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 13,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_13')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 14,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_14')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 15,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_15')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 16,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_16')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 17,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_17')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 18,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_18')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 19,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_19')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 20,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_20')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 21,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_21')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 22,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_22')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 23,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_23')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 24,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_24')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 25,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_25')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 26,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_26')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 27,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_27')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 28,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_28')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 29,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_29')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 30,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_30')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 31,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_31')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 32,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_32')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 33,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_33')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 34,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_34')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 35,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_35')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 36,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_36')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 37,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_37')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 38,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_38')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 39,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_39')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 40,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_40')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 41,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_41')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 42,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_42')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 43,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_43')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 44,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_44')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 45,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_45')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 46,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_46')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 47,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_47')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 48,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_48')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 49,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_49')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 50,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_50')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 51,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_51')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 52,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_52')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 53,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_53')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 54,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_54')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 55,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_55')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 56,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_56')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 57,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_57')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 58,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_58')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 59,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_59')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 60,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_60')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 61,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_61')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 62,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_62')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            },
+            {
+                "lun": 63,
+               "name": "[concat(parameters('prefix'), '_', parameters('suffix'), '_63')]",
+                "diskSizeGB": "[parameters('diskSizeGB')]",
+                "caching": "[parameters('cache')]",
+                "createOption": "Empty"
+            }
+         ]
+    },
+    "resources": [
+    ],
+    "outputs": {
+        "result": {
+            "type": "array",
+            "value": "[take(variables('diskArray'),parameters('numberOfDisks'))]"
+        }
+    }
+}

@@ -1,0 +1,317 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"adminUsername": {
+			"type": "string"
+		},
+		"adminPassword": {
+			"type": "securestring"
+		},
+		"vmssName" : {
+			"type" : "string",
+			"metadata" : {
+				"description" : "String used as a base for naming resources. Must be 3-61 characters in length and globally unique across Azure. A hash is prepended to this string for some resources, and resource-specific information is appended."
+			},
+			"maxLength" : 61
+		},
+		"uniqueDnsName" : {
+			"type" : "string",
+			"metadata" : {
+				"description" : "string used to name the Azure Traffic Manager endpoint"
+
+			},
+			"maxLength" : 61
+
+		},
+		"ubuntuOSVersion" : {
+			"type" : "string",
+			"defaultValue": "16.04.0-LTS",
+			"allowedValues": [
+				"14.04.4-LTS",
+			"16.04.0-LTS"
+				],
+			"metadata": {
+				"description": "The Ubuntu version for the VM. This will pick a fully patched image of this given Ubuntu version. Allowed values are: 14.04.4-LTS, 16.04.0-LTS."
+			}
+		}
+	},
+	"variables": {
+		"computeApiVersion": "2016-04-30-preview",
+		"networkApiVersion": "2016-03-30",
+		"tmApiVersion": "2015-11-01",
+		"zonalNetworkApiVersion": "2016-11-01",
+		"storageApiVersion": "2015-06-15",
+		"osType": {
+			"publisher": "Canonical",
+			"offer": "UbuntuServer",
+			"sku": "[parameters('ubuntuOSVersion')]",
+			"version": "latest"
+		},
+		"imageReference" : "[variables('osType')]",
+		"namingInfix": "[toLower(substring(concat(parameters('vmssName'), uniqueString(resourceGroup().id)), 0, 9))]",
+		"longNameInfix" : "[tolower(parameters('vmssName'))]",
+		"publicIPAddressName" : "[concat(variables('namingInfix'), uniqueString(resourceGroup().id), 'pip')]" ,
+		"publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]",
+		"lbName" : "[concat(variables('namingInfix'), 'lb')]",
+		"lbFE" : "lbFE",
+		"lbBE" : "lbBE",
+		"lbNAT" : "lbNAT",
+		"lbRule" : "lbRule",
+		"lbProbe" : "lbProbe",
+		"tmProfileName" : "atmProfile",
+		"vmssextname" : "vmssextension", 
+		"myZones" : ["1","2","3"]
+	},
+	"resources": [
+	{
+		"type": "Microsoft.Network/virtualNetworks",
+		"name": "myVnet",
+		"location": "[resourceGroup().location]",
+		"apiVersion": "[variables('networkApiVersion')]",
+		"properties": {
+			"addressSpace": {
+				"addressPrefixes": [
+					"10.0.0.0/16"
+					]
+			},
+			"subnets": [
+			{
+				"name": "mySubnet",
+				"properties": {
+					"addressPrefix": "10.0.0.0/16"
+				}
+			}
+			]
+		}
+	},
+	{
+		"type" : "Microsoft.Network/publicIPAddresses",
+		"name" : "[concat(variables('publicIPAddressName'),'-zone', variables('myZones')[copyindex()])]",
+		"location": "[resourceGroup().location]",
+		"zones" : ["[variables('myZones')[copyindex()]]"],
+		"apiVersion": "[variables('zonalNetworkApiVersion')]",
+		"copy" : {
+			"name" : "IPcount",
+			"count" : "[length(variables('myZones'))]"
+		},
+		"properties": {
+			"publicIPAllocationMethod" : "Dynamic",
+			"dnsSettings" : {
+				"domainNameLabel" : "[concat (variables('publicIPAddressName'),'-zone', variables('myZones')[copyindex()])]"
+			}
+		}
+	},
+        {
+            "apiVersion": "[variables('tmApiVersion')]",
+            "type": "Microsoft.Network/trafficManagerProfiles",
+            "name": "[variables('tmProfileName')]",
+            "location": "global",
+            "properties": {
+                "profileStatus": "Enabled",
+                "trafficRoutingMethod": "Weighted",
+                "dnsConfig": {
+                    "relativeName": "[parameters('uniqueDnsName')]",
+                    "ttl": 30
+                },
+                "monitorConfig": {
+                    "protocol": "HTTP",
+                    "port": 80,
+                    "path": "/"
+                }
+            }
+        },
+        {
+            "apiVersion": "[variables('tmApiVersion')]",
+            "type": "Microsoft.Network/trafficManagerProfiles/azureEndpoints",
+            "name": "[concat(variables('tmProfileName'),'/Endpoint', copyIndex())]",
+            "dependsOn": [
+                "[concat('Microsoft.Network/trafficManagerProfiles/', variables('tmProfileName'))]",
+		"[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/loadBalancers/', variables('lbName'), 'forZone',variables('myZones')[copyindex()])]",
+		"[concat(variables('publicIPAddressName'),'-zone', variables('myZones')[copyindex()])]"
+            ],
+            "location": "global",
+            "copy": {
+                "name": "endpointLoop",
+		"count" : "[length(variables('myZones'))]"
+            },
+            "properties": {
+                "targetResourceId": "[resourceId('Microsoft.Network/publicIPAddresses',concat(variables('publicIPAddressName'), '-zone', variables('myZones')[copyindex()]))]",
+                "endpointStatus": "Enabled",
+                "weight": 1
+
+            }
+        },
+	{
+		"type" : "Microsoft.Network/loadBalancers",
+		"name" : "[concat(variables('lbName'),'forZone', variables('myZones')[copyindex()])]",
+		"location": "[resourceGroup().location]",
+		"apiVersion": "[variables('networkApiVersion')]",
+		"copy" : {
+			"name" : "LBcount",
+			"count" : "[length(variables('myZones'))]"
+		},
+		"dependsOn" : [
+			"[concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'),'-zone',variables('myZones')[copyindex()])]"
+			],
+		"properties" : {
+			"frontendIPConfigurations" : [
+			{
+				"name" : "[variables('lbFE')]",
+				"properties" : {
+					"publicIPAddress" : {
+						"id" : "[resourceId('Microsoft.Network/publicIPAddresses',concat(variables('publicIPAddressName'),'-zone',variables('myZones')[copyindex()]))]"
+					}
+				}
+			}
+			],
+				"backendAddressPools" : [
+				{
+					"name" : "[variables('lbBE')]"
+				}
+			],
+				"inboundNatPools" : [
+				{
+					"name": "[variables('lbNAT')]",
+					"properties": {
+						"frontendIPConfiguration": {
+							"id" : "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/loadBalancers/', variables('lbName'),'forZone',variables('myZones')[copyindex()], '/frontendIPConfigurations/', variables('lbFE'))]"
+						},
+						"protocol": "tcp",
+						"frontendPortRangeStart": 10022,
+						"frontendPortRangeEnd": 10050,
+						"backendPort": 22
+					}
+				}
+			],
+				"loadBalancingRules" : [
+				{
+					"name" : "[variables('lbRule')]",
+					"properties" : {
+						"loadDistribution" : "Default",
+						"frontendIPConfiguration" : {
+							"id" : "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/loadBalancers/', variables('lbName'),'forZone',variables('myZones')[copyindex()], '/frontendIPConfigurations/', variables('lbFE'))]"
+						},
+						"backendAddressPool" : {
+								"id" : "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/loadBalancers/', variables('lbName'), 'forZone',variables('myZones')[copyindex()], '/backendAddressPools/', variables('lbBE'))]"
+						},
+						"protocol" : "tcp", 
+						"frontendPort" : 80, 
+						"backendPort" : 80, 
+						"enableFloatingIP" : false, 
+						"idleTimeoutInMinutes" : 5,
+						"probe" : {
+								"id" : "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/loadBalancers/', variables('lbName'), 'forZone',variables('myZones')[copyindex()], '/probes/lbProbe')]"
+						}
+					}
+				}
+			],
+				"probes" : [
+				{
+					"name": "lbProbe",
+					"properties": {
+						"protocol": "tcp",
+						"port": 80,
+						"intervalInSeconds": 5,
+						"numberOfProbes": 2
+					}
+				}
+			]
+		}
+
+	},
+	{
+		"type": "Microsoft.Compute/virtualMachineScaleSets",
+		"name" : "[concat('myScaleset','-zone', variables('myZones')[copyindex()])]",
+		"location": "[resourceGroup().location]",
+		"zones" : ["[variables('myZones')[copyindex()]]"],
+		"copy" : {
+			"name" : "VMSScount",
+			"count" : "[length(variables('myZones'))]"
+		},
+		"apiVersion": "[variables('computeApiVersion')]",
+		"dependsOn": [
+			"Microsoft.Network/virtualNetworks/myVnet",
+					"[concat('Microsoft.Network/loadBalancers/', variables('lbName'), 'forZone',variables('myZones')[copyindex()])]"
+			],
+		"sku": {
+			"name": "Standard_D2_v2",
+			"capacity": 5
+		},
+		"properties": {
+			"singlePlacementGroup" : true,
+			"upgradePolicy": {
+				"mode": "Manual"
+			},
+			"virtualMachineProfile": {
+				"storageProfile": {
+					"osDisk" : {
+						"createOption" : "FromImage"
+					},
+					"imageReference" : "[variables('imageReference')]",
+					"dataDisks" : [
+					{
+						"lun" : 1,
+						"createOption" : "Empty",
+						"diskSizeGB" : 50
+					} 
+					]
+				},
+				"osProfile": {
+					"computerNamePrefix": "vm",
+					"adminUsername": "[parameters('adminUsername')]",
+					"adminPassword": "[parameters('adminPassword')]",
+					"customData": "[base64(variables('myZones')[copyindex()])]"
+				},
+				"networkProfile": {
+					"networkInterfaceConfigurations": [
+					{
+						"name": "myNic",
+						"properties": {
+							"primary": "true",
+							"ipConfigurations": [
+							{
+								"name": "myIpConfig",
+								"properties": {
+									"subnet": {
+										"id": "[concat(resourceId('Microsoft.Network/virtualNetworks', 'myVnet'), '/subnets/mySubnet')]"
+									},
+									"loadBalancerBackendAddressPools" : [
+									{
+										"id" : "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/loadBalancers/', variables('lbName'), 'forZone', variables('myZones')[copyindex()], '/backendAddressPools/', variables('lbBE'))]"
+									}
+									],
+										"loadBalancerInboundNatPools" : [
+										{
+											"id" : "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/loadBalancers/', variables('lbName'), 'forZone', variables('myZones')[copyindex()], '/inboundNatPools/', variables('lbNAT'))]"
+
+										}
+									]
+								}
+							}
+							]
+						}
+					}
+					]
+				},
+				"extensionProfile" : {
+					"extensions" : [
+					{
+						"name" : "[variables('vmssextname')]",
+						"properties" : {
+							"publisher": "Microsoft.Azure.Extensions",
+							"type": "CustomScript",
+							"typeHandlerVersion": "2.0",
+							"autoUpgradeMinorVersion" : false,
+							"settings" : {
+									"commandToExecute" : "sudo apt-get -y update && sudo apt-get install -y apache2 && echo \\<center\\>\\<h1\\>My Demo App\\</h1\\>\\<br/\\>\\</center\\> > /var/www/html/demo.html  && echo \\<center\\>\\<h1\\> >> /var/www/html/demo.html && sudo /usr/bin/curl http://169.254.169.254/metadata/v1/instanceinfo  | awk -F '\"' '{print $4;}' >> /var/www/html/demo.html && echo \\</h1\\>\\<br/\\>\\</center\\> >> /var/www/html/demo.html && echo \\<center\\>\\<h1\\> >> /var/www/html/demo.html && sudo /sbin/ifconfig eth0  | grep 'inet addr' | awk '{print $2}' >> /var/www/html/demo.html && echo \\</h1\\>\\<br/\\>\\</center\\> >> /var/www/html/demo.html &&  sudo apachectl restart"
+							}
+							}
+						}
+					]
+				}
+			}
+		}
+	}
+	]
+}
