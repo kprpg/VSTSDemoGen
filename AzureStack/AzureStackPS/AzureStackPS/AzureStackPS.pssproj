@@ -34,6 +34,8 @@
     <Compile Include="AzureStackPolicyImplement.ps1" />
     <Compile Include="ConfigPS4UseWithMAS.ps1" />
     <Compile Include="DSN-Environment-Integration-to-MAS.ps1" />
+    <Compile Include="Get_Usage_Data.ps1" />
+    <Compile Include="HybridEnvSwitchAndDeploy.ps1" />
     <Compile Include="InstallPS4MAS.ps1" />
     <Compile Include="MAS-Infrastructure-Monitoring.ps1" />
     <Compile Include="MAS-Multi-Tenanting.ps1" />

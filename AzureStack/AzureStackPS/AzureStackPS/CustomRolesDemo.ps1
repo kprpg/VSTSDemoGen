@@ -8,13 +8,28 @@ Get-AzureRmRoleDefinition -Name "Virtual MAchine Contributor" | ConvertTo-Json |
 
 ## Get the action strings for restart and start action for the VM
 Get-AzureRmProviderOperation -OperationSearchString Microsoft.Compute/VirtualMachines/* | ft operation
+Get-AzureRmProviderFeature -ListAvailable
+
+Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Compute | ft ResourceTypes
+
+Get-AzureRmResourceProvider | Out-File C:\Temp\AzureRPTypes.txt
+
+
+
+## Get the action strings for restart and start action for the VM
+Get-AzureRmProviderOperation -OperationSearchString Microsoft.Compute/VirtualMachines/* | ft operation
+
 ## Get the action strings for Virtual Network Related operations
-Get-AzureRmProviderOperation -OperationSearchString Microsoft.Web/Site/instances/* | ft operation
+Get-AzureRmProviderOperation -OperationSearchString Microsoft.Network/VirtualNetwork/* | ft operation
 Get-AzureRmResourceProvider
 
 
 ## Get the action strings for Support namespace
 Get-AzureRmProviderOperation -OperationSearchString Microsoft.Support/* | ft operation
+
+## Get the action strings for Support namespace
+Get-AzureRmProviderOperation -OperationSearchString Microsoft.Security/* | ft operation
+
 
 ## Create the nre tole definition using the modified input file 
 New-AzureRmRoleDefinition -InputFile C:\users\gpillai\Source\Repos\VSTSDemoGen\AzureStack\AzureStackPS\VMZ-Contributor-Role.json
