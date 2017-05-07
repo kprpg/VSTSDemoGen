@@ -118,7 +118,7 @@
       "apiVersion": "2016-03-01",
       "name": "[variables('webSiteName')]",
       "type": "Microsoft.Web/sites",
-      "location": "[resourceGroup().location]",
+       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[variables('hostingPlanName')]"
       ],
@@ -130,6 +130,7 @@
         "name": "[variables('webSiteName')]",
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]"
       },
+      
       "resources": [
         {
           "apiVersion": "2016-03-01",
