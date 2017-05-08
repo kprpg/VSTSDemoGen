@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "backendIpAddress1": {
+      "value": "appGWIP1"
+    },
+    "backendIpAddress2": {
+      "value": "appGPIP2"
+    },
+    "storageAccountName": {
+      "value": "hpteststore321"
+    },
+    "workspaceId": {
+      "value": "/subscriptions/0c378775-d18a-45bb-b426-3627de556dd1/resourcegroups/hptest/providers/microsoft.operationalinsights/workspaces/hptestoms"
+    }
+  }
+}

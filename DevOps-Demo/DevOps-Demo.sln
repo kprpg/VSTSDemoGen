@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp-ALM-NoAuth", "WebApp
 EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "InfraAsCode", "InfraAsCode\InfraAsCode.deployproj", "{C8F1CCE8-4602-4E46-94F2-2587F932E349}"
 EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AppGW-with-Diagnostics", "AppGW-with-Diagnostics\AppGW-with-Diagnostics.deployproj", "{D42830AF-0088-4806-A45B-1C9F9DF6CA20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C8F1CCE8-4602-4E46-94F2-2587F932E349}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8F1CCE8-4602-4E46-94F2-2587F932E349}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8F1CCE8-4602-4E46-94F2-2587F932E349}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D42830AF-0088-4806-A45B-1C9F9DF6CA20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D42830AF-0088-4806-A45B-1C9F9DF6CA20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D42830AF-0088-4806-A45B-1C9F9DF6CA20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D42830AF-0088-4806-A45B-1C9F9DF6CA20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
