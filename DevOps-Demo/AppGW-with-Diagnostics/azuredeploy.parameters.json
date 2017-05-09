@@ -9,10 +9,10 @@
       "value": "appGPIP2"
     },
     "storageAccountName": {
-      "value": "hpteststore321"
+      "value": "myteststore321"
     },
     "workspaceId": {
-      "value": "/subscriptions/0c378775-d18a-45bb-b426-3627de556dd1/resourcegroups/hptest/providers/microsoft.operationalinsights/workspaces/hptestoms"
+      "value": "/subscriptions/0c378775-d18a-45bb-b426-3627de556dd1/resourcegroups/mytest/providers/microsoft.operationalinsights/workspaces/mytestoms"
     }
   }
 }
