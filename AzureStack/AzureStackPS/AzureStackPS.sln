@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Governance", "Governance", 
 		SupportOnly-Custom-Role.json = SupportOnly-Custom-Role.json
 		VM-Contributor-Role.json = VM-Contributor-Role.json
 		VM-Custom-Role.json = VM-Custom-Role.json
+		VMZ-Contributor-Role.json = VMZ-Contributor-Role.json
+		VNetInterface-CustomContributor-Role.json = VNetInterface-CustomContributor-Role.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AvailabilityZones", "AvailabilityZones", "{C46A2B15-90AE-4618-B4A8-1E1FC1AE1688}"
