@@ -38,6 +38,10 @@ Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AZ-101-vm-az-simple-linux",
 EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AZ-101-vm-AZ-Simple-Windows", "AZ-101-vm-AZ-Simple-Windows\AZ-101-vm-AZ-Simple-Windows.deployproj", "{39BBEA78-0B75-489F-B506-6809197B8C18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Container-Demo", "Container-Demo\Container-Demo.csproj", "{429BB06B-2A11-420C-9BE6-3AAD2D3E6895}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4C3CE7A9-FDF1-49E5-9817-6FF57727F053}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +68,14 @@ Global
 		{39BBEA78-0B75-489F-B506-6809197B8C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39BBEA78-0B75-489F-B506-6809197B8C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39BBEA78-0B75-489F-B506-6809197B8C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{429BB06B-2A11-420C-9BE6-3AAD2D3E6895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{429BB06B-2A11-420C-9BE6-3AAD2D3E6895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{429BB06B-2A11-420C-9BE6-3AAD2D3E6895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{429BB06B-2A11-420C-9BE6-3AAD2D3E6895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C3CE7A9-FDF1-49E5-9817-6FF57727F053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C3CE7A9-FDF1-49E5-9817-6FF57727F053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C3CE7A9-FDF1-49E5-9817-6FF57727F053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C3CE7A9-FDF1-49E5-9817-6FF57727F053}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

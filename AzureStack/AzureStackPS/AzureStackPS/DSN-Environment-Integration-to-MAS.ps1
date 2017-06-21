@@ -29,4 +29,4 @@ Invoke-Command -ComputerName mas-dc01 -Credential azurestack\azurestackadmin -Sc
 ## There are a few steps needed to done in the Customer Environment not shown here. 
 ## 1. Setup DNS forwards in Customer DNS, so that customer CorpNet can resolve MAS services.
 ## 2. Set ADFS Relying Party Trust for Customer AD
-Add-ADFSRelyingPartyTrust -Name AzureStack -MetadataUrl "https://adfs.local.azurestack.external/FederationMetaData/2007-06/DederationMetadata.xml" -IssuanceTransformRulesFile "C:\ClainRules.txt" -AutoUpdateEnabled:$true -MonitoringEnabled:$true -enabled
+Add-ADFSRelyingPartyTrust -Name AzureStack -MetadataUrl "https://adfs.local.azurestack.external/FederationMetaData/2007-06/FederationMetadata.xml" -IssuanceTransformRulesFile "C:\ClainRules.txt" -AutoUpdateEnabled:$true -MonitoringEnabled:$true -enabled

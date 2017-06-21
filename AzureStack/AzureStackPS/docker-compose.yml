@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  container-demo:
+    image: container-demo
+    build:
+      context: ./Container-Demo
+      dockerfile: Dockerfile

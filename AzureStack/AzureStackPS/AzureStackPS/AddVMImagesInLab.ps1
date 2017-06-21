@@ -10,6 +10,7 @@ expand-archive "$env:TEMP\master.zip" -DestinationPath C:\ -Force
 Remove-Item "$env:TEMP\master.zip"
 #endregion
 
+
 #region Import Modules
 
 Import-Module C:\AzureStack-Tools-master\Connect\AzureStack.Connect.psm1

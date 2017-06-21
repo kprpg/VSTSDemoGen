@@ -1,0 +1,32 @@
+﻿{
+
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Compute/virtualMachines"
+      },
+      {
+        "not": {
+          "allOf": [
+            {
+              "field": "Microsoft.Compute/virtualMachines/imagePublisher",
+              "equals": "Riverbed Technology"
+            },
+            {
+              "field": "Microsoft.Compute/virtualMachines/imageOffer",
+              "equals": "UbuntuServer"
+            },
+            {
+              "field": "Microsoft.Compute/virtualMachines/imageSku",
+              "equals": "14.04.2-LTS"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "then": {
+    "effect": "deny"
+  }
+}
