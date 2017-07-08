@@ -13,11 +13,11 @@ Remove-Item "$env:TEMP\master.zip"
 
 #region Import Modules
 
-Import-Module C:\AzureStack-Tools-master\Connect\AzureStack.Connect.psm1
-Import-Module C:\AzureStack-Tools-master\ComputeAdmin\AzureStack.ComputeAdmin.psm1
-get-module azurerm* -listavailable
-get-module azurestack -listavailable 
-install-module azurestack -requiredversion 1.2.9
+#Import-Module C:\AzureStack-Tools-master\Connect\AzureStack.Connect.psm1
+#Import-Module C:\AzureStack-Tools-master\ComputeAdmin\AzureStack.ComputeAdmin.psm1
+#get-module azurerm* -listavailable
+#get-module azurestack -listavailable 
+#install-module azurestack -requiredversion 1.2.9
 
 invoke-webrequest "https://github.com/Azure/AzureStack-Tools/archive/master.zip" -OutFile "$env:TEMP\master.zip"
 expand-archive "$env:TEMP\master.zip" -DestinationPath C:\ -Force
