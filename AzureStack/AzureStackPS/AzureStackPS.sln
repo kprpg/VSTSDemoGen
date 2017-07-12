@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "AzureStackPS", "AzureStackPS\AzureStackPS.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
 EndProject
@@ -38,9 +38,11 @@ Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AZ-101-vm-az-simple-linux",
 EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AZ-101-vm-AZ-Simple-Windows", "AZ-101-vm-AZ-Simple-Windows\AZ-101-vm-AZ-Simple-Windows.deployproj", "{39BBEA78-0B75-489F-B506-6809197B8C18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Container-Demo", "Container-Demo\Container-Demo.csproj", "{429BB06B-2A11-420C-9BE6-3AAD2D3E6895}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Container-Demo", "Container-Demo\Container-Demo.csproj", "{429BB06B-2A11-420C-9BE6-3AAD2D3E6895}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4C3CE7A9-FDF1-49E5-9817-6FF57727F053}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppToASE", "..\WebAppToASE\WebAppToASE.csproj", "{EF3FBFA5-CBD8-4C56-A356-6BDE6D13A07A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -76,6 +78,10 @@ Global
 		{4C3CE7A9-FDF1-49E5-9817-6FF57727F053}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C3CE7A9-FDF1-49E5-9817-6FF57727F053}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C3CE7A9-FDF1-49E5-9817-6FF57727F053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF3FBFA5-CBD8-4C56-A356-6BDE6D13A07A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF3FBFA5-CBD8-4C56-A356-6BDE6D13A07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF3FBFA5-CBD8-4C56-A356-6BDE6D13A07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF3FBFA5-CBD8-4C56-A356-6BDE6D13A07A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

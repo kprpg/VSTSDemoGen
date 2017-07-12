@@ -1,0 +1,18 @@
+##  "licenseType": "Windows_Server"
+ "if": {  
+ "not": {  
+        "field": "licenseType",
+        "equals": "Windows_Server"    
+  }
+  },
+## "then": {
+##   "effect": "deny"
+## }
+
+  "then": {
+        "effect": "append",
+        "details": [
+            {
+                "field": "licenseType",
+                "value": "Windows_Server"
+            }

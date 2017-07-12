@@ -26,6 +26,6 @@ Get-AzureRmVMImage -Location "SouthCentralUS" -Debug
 
 Get-AzureVMImage | Out-GridView -PassThru
 
-$policy = New-AzureRmPolicyDefinition -Name ZacharyLocationPolicy -Policy C:\Users\gpillai\Source\Repos\VSTSDemoGen\AzureStack\AzureStackPS\LocationPolicy.json
+$policy = New-AzureRmPolicyDefinition -Name ZacharyLocationPolicy -Policy LocationPolicy.json
 
 New-AzureRmPolicyAssignment -Name locationPolicy -Scope /subscriptions/49c7ab35-7737-4a04-8ae6-49ec7aa971c7/resourceGroups/rgPolicy -PolicyDefinition $policy
