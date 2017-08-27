@@ -160,6 +160,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Data\exportedcert.pfx" />
+    <Content Include="App_Data\exportedcertMyFabriKam.pfx" />
     <None Include="Properties\PublishProfiles\WebAppU2rgASP-sub1 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\WebAppU2rgASP-sub1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
