@@ -14,8 +14,16 @@ Get-AzureRmRoleDefinition -Name "Network Contributor" | ConvertTo-Json | Out-Fil
 ## Get the action strings for restart and start action for the VM
 Get-AzureRmProviderOperation -OperationSearchString Microsoft.Compute/VirtualMachines/* | ft operation
 
+## Get the action strings for VNET NAmespace
+Get-AzureRmProviderOperation -OperationSearchString Microsoft.Network/* | ft operation
+
+## Get the actions for Microsoft.Gallery namespace
+Get-AzureRmProviderOperation -OperationSearchString Microsoft.Gallery/myareas/areas/areas/galleryitems | ft operation
+Get-AzureRmProviderOperation -OperationSearchString Microsoft.Gallery/galleryitems | ft operation
+
+
 ## Get the Action strings for Load Balancer
-Get-AzureRmProviderOperation -OperationSearchString Microsoft.Network/LoadBalancer/* | ft operation
+Get-AzureRmProviderOperation -OperationSearchString Microsoft.Network/LoadBalancers/* | ft operation
 Get-AzureRmProviderFeature -ListAvailable
 
 Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Compute | ft ResourceTypes
@@ -65,3 +73,12 @@ New-AzureRmRoleDefinition -InputFile C:\users\gpillai\Source\Repos\VSTSDemoGen\A
 ## Now Assign the Role (Does not work, do assignment from portal)
 New-AzureRmRoleAssignment -RoleDefinitionName "Custom1 Network Contributor" -ResourceGroupName rgAzStack -SignInName mking@gpmess.onmicrosoft.com
 Remove-AzureRmRoleAssignment -RoleDefinitionName "Zachry3 Network Contributor"
+
+## Brian S Bug
+Get-AzureRmProviderOperation --OperationSearchString Microsoft.RBAC/* | ft operation
+## Get the change log for 
+Get-AzureRMAuthorizationChangeLog -StartTime ([DateTime]::Now - [TimeSpan]::FromDays(15)) | FT Caller,Action,RoleName,PrincipalType,PrincipalName,ScopeType,ScopeName
+## Create the new role definition for preventing IAMAccess 
+New-AzureRmRoleDefinition -InputFile C:\users\gpillai\Source\Repos\VSTSDemoGen\AzureStack\AzureStackPS\NoIAMAccess.json
+
+Get-AzureRmRoleDefinition | ft NAme, Id
