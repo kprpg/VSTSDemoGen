@@ -50,6 +50,7 @@
     <Compile Include="Multi-User-Access-to-MAS.ps1" />
     <Compile Include="MyDscConfiguration.ps1" />
     <Compile Include="RegisterMASwithAzure4MrktPlcUsage.ps1" />
+    <Compile Include="RemoveAzureSiteRecoveryByForce.ps1" />
     <Compile Include="RestrictTypeOfAllowedResourcePolicy.ps1" />
     <Compile Include="VM-SKU-Policy.ps1" />
     <Compile Include="VPNConnectivityToAzStack.ps1" />

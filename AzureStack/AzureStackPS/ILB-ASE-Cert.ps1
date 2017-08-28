@@ -3,5 +3,4 @@
 $certThumbprint = "cert:\localMachine\my\" +$certificate.Thumbprint
 $password = ConvertTo-SecureString -String "P2ssw0rd" -Force -AsPlainText
 
-$fileName = "exportedcert.pfx" 
-Export-PfxCertificate -cert $certThumbprint -FilePath $fileName -Password $password
+$fileName = "exportedcertMyFabriKam.pfx" 
