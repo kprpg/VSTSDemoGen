@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KL-WebApplication1", "KL-WebApplication1\KL-WebApplication1.csproj", "{5BF3605D-C1BA-423A-BC09-B36947D20DCD}"
 EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "InfrastructureAsCode", "InfrastructureAsCode\InfrastructureAsCode.deployproj", "{1B1A1178-1586-4B41-AEBF-7B7B05C5F0B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5BF3605D-C1BA-423A-BC09-B36947D20DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BF3605D-C1BA-423A-BC09-B36947D20DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BF3605D-C1BA-423A-BC09-B36947D20DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B1A1178-1586-4B41-AEBF-7B7B05C5F0B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B1A1178-1586-4B41-AEBF-7B7B05C5F0B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B1A1178-1586-4B41-AEBF-7B7B05C5F0B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B1A1178-1586-4B41-AEBF-7B7B05C5F0B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
