@@ -7,7 +7,7 @@ Login-AzureRmAccount -SubscriptionId $SubscriptionId
 
 
 #Get the role definition for a role which seems closest to the role you want to create 
-Get-AzureRmRoleDefinition -Name "Virtual MAchine Contributor" | ConvertTo-Json | Out-File C:\users\gpillai\Source\Repos\VSTSDemoGen\AzureStack\AzureStackPS\Z1-Contributor-Role.json
+Get-AzureRmRoleDefinition -Name "Virtual MAchine Contributor" | ConvertTo-Json | Out-File C:\users\gpillai\Source\Repos\VSTSDemoGen\AzureStack\AzureStackPS\KL-Contributor-Role.json
 Get-AzureRmRoleDefinition -Name "Network Contributor" | ConvertTo-Json | Out-File C:\users\gpillai\Source\Repos\VSTSDemoGen\AzureStack\AzureStackPS\ZVNET-Contributor-Role.json
 
 
