@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "AzureStackPS", "AzureStackPS\AzureStackPS.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
 EndProject
@@ -42,7 +42,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Container-Demo", "Container
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4C3CE7A9-FDF1-49E5-9817-6FF57727F053}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp4ASE", "..\WebApp4ASE\WebApp4ASE.csproj", "{7EEB49E5-A99B-41A9-B513-29E0C6F1D1A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp4ASE", "..\WebApp4ASE\WebApp4ASE.csproj", "{7EEB49E5-A99B-41A9-B513-29E0C6F1D1A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomerPOC", "CustomerPOC", "{6E072F58-77FA-403D-9E4B-9141BD81718A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ILB4WebAppsInVMs", "ILB4WebAppsInVMs", "{80619C3C-8FCC-4A07-B635-7A3C35C67389}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ILB-4-IISWinSrvrs-in-AS", "..\ILB-4-IISWinSrvrs-in-AS\ILB-4-IISWinSrvrs-in-AS.deployproj", "{70E829C3-673E-4525-973A-6A2912D085BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,6 +88,10 @@ Global
 		{7EEB49E5-A99B-41A9-B513-29E0C6F1D1A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EEB49E5-A99B-41A9-B513-29E0C6F1D1A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EEB49E5-A99B-41A9-B513-29E0C6F1D1A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70E829C3-673E-4525-973A-6A2912D085BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70E829C3-673E-4525-973A-6A2912D085BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70E829C3-673E-4525-973A-6A2912D085BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70E829C3-673E-4525-973A-6A2912D085BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +104,8 @@ Global
 		{8F9158CB-B03A-483F-A6F9-C6697438E639} = {C46A2B15-90AE-4618-B4A8-1E1FC1AE1688}
 		{24C8B225-BB02-412F-8BDD-B1F9A30DB263} = {DDDB28D5-1094-410B-BAF9-55B5E88D2D36}
 		{39BBEA78-0B75-489F-B506-6809197B8C18} = {8F9158CB-B03A-483F-A6F9-C6697438E639}
+		{80619C3C-8FCC-4A07-B635-7A3C35C67389} = {6E072F58-77FA-403D-9E4B-9141BD81718A}
+		{70E829C3-673E-4525-973A-6A2912D085BE} = {80619C3C-8FCC-4A07-B635-7A3C35C67389}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E76AD8C7-6F84-473F-8D87-CC378F5A2D0C}

@@ -1,0 +1,82 @@
+{
+    "authorization": {
+        "action": "Microsoft.Compute/virtualMachines/write",
+        "scope": "/subscriptions/0c378775-d18a-45bb-b426-3627de556dd1/resourcegroups/rgVSVM/providers/Microsoft.Compute/virtualMachines/vs2017SrvrvVM"
+    },
+    "caller": "gpillai@microsoft.com",
+    "channels": "Operation",
+    "claims": {
+        "aud": "https://management.core.windows.net/",
+        "iss": "https://sts.windows.net/72f988bf-86f1-41af-91ab-2d7cd011db47/",
+        "iat": "1508792232",
+        "nbf": "1508792232",
+        "exp": "1508796132",
+        "_claim_names": "{\"groups\":\"src1\"}",
+        "_claim_sources": "{\"src1\":{\"endpoint\":\"https://graph.windows.net/72f988bf-86f1-41af-91ab-2d7cd011db47/users/37e0eb1b-241e-4dd7-bf6d-8bb6ffc40e6b/getMemberObjects\"}}",
+        "http://schemas.microsoft.com/claims/authnclassreference": "1",
+        "aio": "Y2MAggmhP/9qOedY719frrtixaczBc06W4s5HkmzPK9jX7LuFwA=",
+        "http://schemas.microsoft.com/claims/authnmethodsreferences": "rsa,mfa",
+        "appid": "c44b4083-3bb0-49c1-b47d-974e53cbdf3c",
+        "appidacr": "2",
+        "http://schemas.microsoft.com/2012/01/devicecontext/claims/identifier": "b478a4eb-1277-4c65-97b0-3b76623d7c33",
+        "e_exp": "262800",
+        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname": "Pillai",
+        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname": "Girish",
+        "ipaddr": "68.203.21.47",
+        "name": "Girish Pillai",
+        "http://schemas.microsoft.com/identity/claims/objectidentifier": "37e0eb1b-241e-4dd7-bf6d-8bb6ffc40e6b",
+        "onprem_sid": "S-1-5-21-124525095-708259637-1543119021-477777",
+        "puid": "1003BFFD801BA87E",
+        "http://schemas.microsoft.com/identity/claims/scope": "user_impersonation",
+        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": "Uu8LKY780Gsf2FlFjVJTmFDNp2fZystq42QuxnJUyOQ",
+        "http://schemas.microsoft.com/identity/claims/tenantid": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": "gpillai@microsoft.com",
+        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn": "gpillai@microsoft.com",
+        "uti": "ptEWQLRuK0aPDUer2h0BAA",
+        "ver": "1.0"
+    },
+    "correlationId": "07f32e6b-3e1a-4c5a-a0f8-8dcbcc96d115",
+    "description": "",
+    "eventDataId": "b5463190-02d4-478f-8ca1-78f08f7dd0b8",
+    "eventName": {
+        "value": "EndRequest",
+        "localizedValue": "End request"
+    },
+    "category": {
+        "value": "Administrative",
+        "localizedValue": "Administrative"
+    },
+    "eventTimestamp": "2017-10-23T21:28:52.4597152Z",
+    "id": "/subscriptions/0c378775-d18a-45bb-b426-3627de556dd1/resourcegroups/rgVSVM/providers/Microsoft.Compute/virtualMachines/vs2017SrvrvVM/events/b5463190-02d4-478f-8ca1-78f08f7dd0b8/ticks/636443909324597152",
+    "level": "Informational",
+    "operationId": "73a2cf72-9c7e-4fbf-9b6b-55132c416295",
+    "operationName": {
+        "value": "Microsoft.Compute/virtualMachines/write",
+        "localizedValue": "Microsoft.Compute/virtualMachines/write"
+    },
+    "resourceGroupName": "rgVSVM",
+    "resourceProviderName": {
+        "value": "Microsoft.Compute",
+        "localizedValue": "Microsoft.Compute"
+    },
+    "resourceType": {
+        "value": "Microsoft.Compute/virtualMachines",
+        "localizedValue": "Microsoft.Compute/virtualMachines"
+    },
+    "resourceId": "/subscriptions/0c378775-d18a-45bb-b426-3627de556dd1/resourcegroups/rgVSVM/providers/Microsoft.Compute/virtualMachines/vs2017SrvrvVM",
+    "status": {
+        "value": "Succeeded",
+        "localizedValue": "Succeeded"
+    },
+    "subStatus": {
+        "value": "",
+        "localizedValue": ""
+    },
+    "submissionTimestamp": "2017-10-23T21:29:09.6758936Z",
+    "subscriptionId": "0c378775-d18a-45bb-b426-3627de556dd1",
+    "properties": {
+        "statusCode": "Created",
+        "serviceRequestId": "413444aa-dc8b-4706-9495-5aa8350bff21"
+    },
+    "relatedEvents": []
+}

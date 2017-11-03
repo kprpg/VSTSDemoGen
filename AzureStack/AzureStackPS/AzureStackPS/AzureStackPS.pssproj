@@ -28,6 +28,7 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="1-MAS-Tools-and-PasswordTo180days.ps1" />
     <Compile Include="Add-VM-Images.ps1" />
     <Compile Include="AddVMImagesInLab.ps1" />
     <Compile Include="ARMPolicyDemo.ps1" />
@@ -50,7 +51,7 @@
     <Compile Include="MAS-Multi-Tenanting.ps1" />
     <Compile Include="Multi-User-Access-to-MAS.ps1" />
     <Compile Include="MyDscConfiguration.ps1" />
-    <Compile Include="RegisterATZ-StackWithAzure.ps1" />
+    <Compile Include="2-MAS-RegisterATZ-StackWithAzure.ps1" />
     <Compile Include="RegisterMASwithAzure4MrktPlcUsage.ps1" />
     <Compile Include="RemoveAzureSiteRecoveryByForce.ps1" />
     <Compile Include="RestrictTypeOfAllowedResourcePolicy.ps1" />
