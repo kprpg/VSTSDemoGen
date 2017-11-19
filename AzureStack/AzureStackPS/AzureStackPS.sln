@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "AzureStackPS", "AzureStackPS\AzureStackPS.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
 EndProject
@@ -50,6 +50,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ILB4WebAppsInVMs", "ILB4Web
 EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ILB-4-IISWinSrvrs-in-AS", "..\ILB-4-IISWinSrvrs-in-AS\ILB-4-IISWinSrvrs-in-AS.deployproj", "{70E829C3-673E-4525-973A-6A2912D085BE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublicAzureArmTemplates", "PublicAzureArmTemplates", "{CC33DF0C-F556-4200-8CD0-BFFCD44F6C05}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "RHEL-3Tier-IaaS", "..\RHEL-3Tier-IaaS\RHEL-3Tier-IaaS.deployproj", "{E60FE446-47AB-42D4-B50A-D26B62A6B023}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,6 +96,10 @@ Global
 		{70E829C3-673E-4525-973A-6A2912D085BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70E829C3-673E-4525-973A-6A2912D085BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70E829C3-673E-4525-973A-6A2912D085BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E60FE446-47AB-42D4-B50A-D26B62A6B023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E60FE446-47AB-42D4-B50A-D26B62A6B023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E60FE446-47AB-42D4-B50A-D26B62A6B023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E60FE446-47AB-42D4-B50A-D26B62A6B023}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,6 +114,7 @@ Global
 		{39BBEA78-0B75-489F-B506-6809197B8C18} = {8F9158CB-B03A-483F-A6F9-C6697438E639}
 		{80619C3C-8FCC-4A07-B635-7A3C35C67389} = {6E072F58-77FA-403D-9E4B-9141BD81718A}
 		{70E829C3-673E-4525-973A-6A2912D085BE} = {80619C3C-8FCC-4A07-B635-7A3C35C67389}
+		{E60FE446-47AB-42D4-B50A-D26B62A6B023} = {CC33DF0C-F556-4200-8CD0-BFFCD44F6C05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E76AD8C7-6F84-473F-8D87-CC378F5A2D0C}
