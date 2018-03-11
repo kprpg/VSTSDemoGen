@@ -2,8 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\AzureStack",
-    "\\AzureStack\\AzureStackPS",
-    "\\AzureStack\\AzureStackPS\\AzureStackPS"
+    "\\AzureStack\\AzureStackPS"
   ],
   "SelectedNode": "\\AzureStack\\AzureStackPS\\AzureStackPS.sln",
   "PreviewInSolutionExplorer": false
