@@ -2,8 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\AzureStack",
-    "\\AzureStack\\AzureStackPS"
+    "\\AzureStack\\AzureStackPS",
+    "\\Test-Demos",
+    "\\Test-Demos\\10kXunitTests-master",
+    "\\Test-Demos\\10kXunitTests-master\\10kXunitTests-master",
+    "\\Test-Demos\\10kXunitTests-master\\10kXunitTests-master\\XUnit_10k"
   ],
-  "SelectedNode": "\\AzureStack\\AzureStackPS\\AzureStackPS.sln",
+  "SelectedNode": "\\Test-Demos\\10kXunitTests-master\\10kXunitTests-master\\XUnit_10k\\XUnit_10k.sln",
   "PreviewInSolutionExplorer": false
 }
